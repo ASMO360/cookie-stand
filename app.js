@@ -1,4 +1,6 @@
 'use strict';
+var cl = console.log();
+
 
 var stores = [];
 
@@ -60,9 +62,9 @@ console.log ('row alki array: ',rowAlki);
 console.log('alki.hourlyCookie: ', alki.hourlyCookie);
 var alkiCoookieData = function(){
   for(var k = 0; k > 15; k++) {
-    rowAlki.push(alki.hourlyCookie[k]);
-    console.log(rowAlki);
+    return rowAlki.push(alki.hourlyCookie[k]);
   }
+  console.log('rowAlki2ndpass', rowAlki);
 };
 alkiCoookieData();
 
@@ -77,45 +79,86 @@ console.log('rowAlki final array:', rowAlki);
 var hrs = ['_', '6 AM', '7 AM', '8 AM', '9 AM', '10 AM', '11 AM', '12 PM', '1 PM', '2 PM', '3 PM', '4 PM', '5 PM', '6 PM', '7 PM', 'DAILY TOTAL'];
 //ADDING TABLE
 var tblEl = document.getElementById('sales-tbl');
-var theadEl = document.createElement('thead');
-theadEl.className = 'tbl-head-top';
-theadEl.id = 'sales-tbl-head';
-tblEl.appendChild(theadEl);
-//attached to table
 
-var trheadEl = document.createElement('tr');
-console.log('tr head creation: ',trheadEl);
-trheadEl.className = 'tbl-head-row';
-trheadEl.id = 'sales-tbl-head-row';
-theadEl.appendChild(trheadEl);
 
-for(var i = 0; i < 16; i++) {
-  var tdheadEl = document.createElement('td');
-  console.log('td head creation: ',tdheadEl);
-  tdheadEl.textContent = hrs[i];
-  trheadEl.appendChild(tdheadEl);
+//create table header
+function tableHead() {
+  var theadEl = document.createElement('thead');
+  theadEl.className = 'tbl-head-top';
+  theadEl.id = 'sales-tbl-head';
+  var topRow = tblRow('', hrs, 'Totals');
+  tblEl.appendChild(topRow);
+  return theadEl;
 }
 
-var tbodyEl = document.createElement('tbody');
-console.log('tbody', tbodyEl);
-tbodyEl.className = 'tbl-body';
-tbodyEl.id = 'sales-tbl-body';
-tblEl.appendChild(tbodyEl);
-
-var tRbodyEl1 = document.createElement('tr');
-console.log('tRbody row 1', tRbodyEl1);
-tRbodyEl1.className = 'tbl-body-row1';
-tRbodyEl1.id = 'sales-tbl-body-row1';
-tbodyEl.appendChild(tRbodyEl1);
-
-
-//First and Pike table info
-for(var j = 0; i < 16; i++) {
-  var tDbody = document.createElement('td');
-  console.log('tDbody loop', tDbody);
-  tDbody.textContent = Store.alki.hourlyCookie[j];
-  tRbodyEl1.appendChild(tDbody);
+//create table body
+var tableBody() {
+  var tbodyEl = document.createElement('tbody');
+  for(var k = 0; k < stores.length; )
 }
+
+//function to create tablerows
+function tblRow (storeInfo, cookieInfo, totalsInfo) {
+  var tREl = document.createElement('tr');
+  var tDElhead = document.createElement('td');
+  tDElhead.textContent = storeInfo;
+  tREl.appendChild(tDElhead);
+
+  for(var i = 0; i < cookieInfo.length; i++){
+    var tDELhead2 = document.createElement('td');
+    tDELhead2.textContent = cookieInfo[i];
+    tREl.appendChild(tDELhead2);
+  }
+
+  var tDElhead3 = document.createElement('td');
+  tDElhead3.textContent = totalsInfo;
+  tREl.appendChild(tDElhead3);
+
+  return tREl;
+}
+
+
+
+
+
+
+
+
+
+
+// var trheadEl = document.createElement('tr');
+// console.log('tr head creation: ',trheadEl);
+// trheadEl.className = 'tbl-head-row';
+// trheadEl.id = 'sales-tbl-head-row';
+// theadEl.appendChild(trheadEl);
+//
+// for(var i = 0; i < 16; i++) {
+//   var tdheadEl = document.createElement('td');
+//   console.log('td head creation: ',tdheadEl);
+//   tdheadEl.textContent = hrs[i];
+//   trheadEl.appendChild(tdheadEl);
+// }
+//
+// var tbodyEl = document.createElement('tbody');
+// console.log('tbody', tbodyEl);
+// tbodyEl.className = 'tbl-body';
+// tbodyEl.id = 'sales-tbl-body';
+// tblEl.appendChild(tbodyEl);
+//
+// var tRbodyEl1 = document.createElement('tr');
+// console.log('tRbody row 1', tRbodyEl1);
+// tRbodyEl1.className = 'tbl-body-row1';
+// tRbodyEl1.id = 'sales-tbl-body-row1';
+// tbodyEl.appendChild(tRbodyEl1);
+//
+//
+// //First and Pike table info
+// for(var j = 0; i < 16; i++) {
+//   var tDbody = document.createElement('td');
+//   console.log('tDbody loop', tDbody);
+//   tDbody.textContent = Store.alki.hourlyCookie[j];
+//   tRbodyEl1.appendChild(tDbody);
+// }
 
 //test to create a header via JS
 var reportHeader = document.getElementById('bus-name');
