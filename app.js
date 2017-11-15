@@ -25,6 +25,7 @@ Store.prototype.hourlyCookiePusher = function(){
   }
 };
 
+//instantiation
 var firstAndPike = new Store('First and Pike', 23, 65, 6.3);
 console.log('store name: ', firstAndPike);
 console.log('stores',stores);
@@ -45,10 +46,11 @@ var alki = new Store('Alki', 2, 16, 4.6);
 console.log('store name: ', alki);
 console.log('stores',stores);
 
+
 //creating table*****************************
 
 //an array for the hours for top row of table.
-var hrs = ['', '6 AM', '7 AM', '8 AM', '9 AM', '10 AM', '11 AM', '12 PM', '1 PM', '2 PM', '3 PM', '4 PM', '5 PM', '6 PM', '7 PM', '8 PM'];
+var hrs = ['_', '6 AM', '7 AM', '8 AM', '9 AM', '10 AM', '11 AM', '12 PM', '1 PM', '2 PM', '3 PM', '4 PM', '5 PM', '6 PM', '7 PM', 'DAILY TOTAL'];
 //ADDING TABLE
 var tblEl = document.getElementById('sales-tbl');
 var theadEl = document.createElement('thead');
@@ -56,6 +58,7 @@ theadEl.className = 'tbl-head-top';
 theadEl.id = 'sales-tbl-head';
 tblEl.appendChild(theadEl);
 //attached to table
+
 var trheadEl = document.createElement('tr');
 console.log('tr head creation: ',trheadEl);
 trheadEl.className = 'tbl-head-row';
@@ -66,9 +69,34 @@ for(var i = 0; i < 16; i++) {
   var tdheadEl = document.createElement('td');
   console.log('td head creation: ',tdheadEl);
   tdheadEl.textContent = hrs[i];
-  tdheadEl.appendChild(trheadEl);
+  trheadEl.appendChild(tdheadEl);
 }
 
+var tbodyEl = document.createElement('tbody');
+console.log('tbody', tbodyEl);
+tbodyEl.className = 'tbl-body';
+tbodyEl.id = 'sales-tbl-body';
+tblEl.appendChild(tbodyEl);
+
+var tRbodyEl1 = document.createElement('tr');
+console.log('tRbody row 1', tRbodyEl1);
+tRbodyEl1.className = 'tbl-body-row1';
+tRbodyEl1.id = 'sales-tbl-body-row1';
+tbodyEl.appendChild(tRbodyEl1);
+
+//First and Pike table info
+// var tDbodyEl1 = document.createElement('td');
+// tDbodyEl1.appendChild(tRbodyEl1);
+// tDbodyEl1.textContent = 'First And Pike';
+
+for(var j = 0; i < 16; i++) {
+  var tDbody = document.createElement('td');
+  console.log('tDbody loop', tDbody);
+  tDbody.textContent = Store.alki.hourlyCookie[j];
+  tRbodyEl1.appendChild(tDbody);
+}
+
+//test to create a header via JS
 var reportHeader = document.getElementById('bus-name');
 reportHeader.textContent = 'SALMON COOKIES - REPORTS';
 
