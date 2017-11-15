@@ -45,15 +45,32 @@ var alki = new Store('Alki', 2, 16, 4.6);
 console.log('store name: ', alki);
 console.log('stores',stores);
 
-var fillTableEL = document.getElementById('sales-toprow');
-var topcelldataEl = document.createElement('td');
-topcelldataEl.className = 'top-row-cells';
-topcelldataEl.id = 'tbl-head-top';
-fillTableEL.appendChild(fillTableEL);
+//creating table*****************************
 
-for(var i = )
+//an array for the hours for top row of table.
+var hrs = ['', '6 AM', '7 AM', '8 AM', '9 AM', '10 AM', '11 AM', '12 PM', '1 PM', '2 PM', '3 PM', '4 PM', '5 PM', '6 PM', '7 PM', '8 PM'];
+//ADDING TABLE
+var tblEl = document.getElementById('sales-tbl');
+var theadEl = document.createElement('thead');
+theadEl.className = 'tbl-head-top';
+theadEl.id = 'sales-tbl-head';
+tblEl.appendChild(theadEl);
+//attached to table
+var trheadEl = document.createElement('tr');
+console.log('tr head creation: ',trheadEl);
+trheadEl.className = 'tbl-head-row';
+trheadEl.id = 'sales-tbl-head-row';
+theadEl.appendChild(trheadEl);
 
+for(var i = 0; i < 16; i++) {
+  var tdheadEl = document.createElement('td');
+  console.log('td head creation: ',tdheadEl);
+  tdheadEl.textContent = hrs[i];
+  tdheadEl.appendChild(trheadEl);
+}
 
+var reportHeader = document.getElementById('bus-name');
+reportHeader.textContent = 'SALMON COOKIES - REPORTS';
 
 
 
