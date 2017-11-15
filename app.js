@@ -2,8 +2,8 @@
 
 var stores = [];
 
-function Store(name, minCust, maxCust, avgCookie) {
-  this.name = name;
+function Store(storeName, minCust, maxCust, avgCookie) {
+  this.storeName = storeName;
   this.minCust = minCust;
   this.maxCust = maxCust;
   this.avgCookie = avgCookie;
@@ -24,6 +24,7 @@ Store.prototype.hourlyCookiePusher = function(){
     this.dayTotal += cPh;//daily total
   }
 };
+
 
 //instantiation
 var firstAndPike = new Store('First and Pike', 23, 65, 6.3);
@@ -46,9 +47,32 @@ var alki = new Store('Alki', 2, 16, 4.6);
 console.log('store name: ', alki);
 console.log('stores',stores);
 
+//Creating array with the store name, hourly cookie totals, and daily totals info for the rows
+//pushing name into 1st cell
+console.log('alki.storeName', alki.storeName);
+var rowAlki = [];
+rowAlki.push(alki.storeName);
+console.log ('row alki array: ',rowAlki);
+
+
+//pushing cookie data into array
+//this is not working!!!!!!
+console.log('alki.hourlyCookie: ', alki.hourlyCookie);
+var alkiCoookieData = function(){
+  for(var k = 0; k > 15; k++) {
+    rowAlki.push(alki.hourlyCookie[k]);
+    console.log(rowAlki);
+  }
+};
+alkiCoookieData();
+
+
+//pushing total to array
+rowAlki.push(alki.dayTotal);
+console.log('rowAlki final array:', rowAlki);
+
 
 //creating table*****************************
-
 //an array for the hours for top row of table.
 var hrs = ['_', '6 AM', '7 AM', '8 AM', '9 AM', '10 AM', '11 AM', '12 PM', '1 PM', '2 PM', '3 PM', '4 PM', '5 PM', '6 PM', '7 PM', 'DAILY TOTAL'];
 //ADDING TABLE
@@ -84,11 +108,8 @@ tRbodyEl1.className = 'tbl-body-row1';
 tRbodyEl1.id = 'sales-tbl-body-row1';
 tbodyEl.appendChild(tRbodyEl1);
 
-//First and Pike table info
-// var tDbodyEl1 = document.createElement('td');
-// tDbodyEl1.appendChild(tRbodyEl1);
-// tDbodyEl1.textContent = 'First And Pike';
 
+//First and Pike table info
 for(var j = 0; i < 16; i++) {
   var tDbody = document.createElement('td');
   console.log('tDbody loop', tDbody);
@@ -99,77 +120,3 @@ for(var j = 0; i < 16; i++) {
 //test to create a header via JS
 var reportHeader = document.getElementById('bus-name');
 reportHeader.textContent = 'SALMON COOKIES - REPORTS';
-
-
-
-
-
-
-//
-//
-//
-//
-//
-//
-//
-//
-// //1st and Pike Store
-// var firstAndPike = {
-//   minCust: 23,
-//   maxCust: 65,
-//   avgCookie: 6.3,
-//   dayTotal: 0,
-//   hourlyCookie: [],
-//   //get the cookies per hour inside the object!!
-//   cPh: function(){
-//     return Math.round((Math.random()) * (this.maxCust - this.minCust) + this.minCust * this.avgCookie);
-//   }
-// };
-//
-// function cPh(){
-//   return Math.round((Math.random()) * (this.maxCust - this.minCust) + this.minCust * this.avgCookie);
-// };
-//
-// for(var i = 15; i > 0; i--){
-//   //old code commented out incase I need to refer to it for the time being.
-//   // var ranCph = Math.random();
-//   // var cPh = Math.round((ranCph) * (firstAndPike.maxCust - firstAndPike.minCust) + firstAndPike.minCust * firstAndPike.avgCookie);
-//   // console.log(cPh);
-//   firstAndPike.hourlyCookie.push(firstAndPike.cPh());
-//   // console.log('1st cookie push round:' + i + '.', firstAndPike.hourlyCookie);
-//   firstAndPike.dayTotal += firstAndPike.cPh();
-// }
-// document.write(firstAndPike.dayTotal += firstAndPike.cPh());
-// // var  hourlyCookie = firstAndPike.getElementById ('sixAm');
-//
-// //document.getElementByTagName('li')
-// document.getElementById('firstPike').innerhtml
-//
-//
-// // SeaTac Airport
-// var seaTac = {
-//   minCust: 3,
-//   maxCust: 24,
-//   avgCookie: 1.2
-// };
-//
-// //Seattle Center
-// var seaCenter = {
-//   minCust: 11,
-//   maxCust: 38,
-//   avgCookie: 3.7
-// };
-//
-// //Capitol Hill
-// var capHill = {
-//   minCust: 20,
-//   maxCust: 38,
-//   avgCookie: 2.3
-// };
-//
-// //Alki
-// var Alki = {
-//   minCust: 2,
-//   maxCust: 16,
-//   avgCookie: 4.6
-// };
