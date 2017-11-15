@@ -1,6 +1,4 @@
 'use strict';
-var cl = console.log();
-
 
 var stores = [];
 
@@ -12,6 +10,7 @@ function Store(storeName, minCust, maxCust, avgCookie) {
   this.dayTotal = 0;
   this.hourlyCookie = [];
   this.hourlyCookiePusher();
+
   stores.push(this);
 }
 
@@ -76,25 +75,34 @@ console.log('rowAlki final array:', rowAlki);
 
 //creating table*****************************
 //an array for the hours for top row of table.
-var hrs = ['_', '6 AM', '7 AM', '8 AM', '9 AM', '10 AM', '11 AM', '12 PM', '1 PM', '2 PM', '3 PM', '4 PM', '5 PM', '6 PM', '7 PM', 'DAILY TOTAL'];
+var hrs = ['6 AM', '7 AM', '8 AM', '9 AM', '10 AM', '11 AM', '12 PM', '1 PM', '2 PM', '3 PM', '4 PM', '5 PM', '6 PM', '7 PM'];
 //ADDING TABLE
-var tblEl = document.getElementById('sales-tbl');
 
-
+function tableMaker() {
+  var tblEl = document.getElementById('sales-tbl');
+  var header = tableHead();
+  var body = tableBody();
+  tblEl.appendChild(header);
+  tblEl.appendChild(body);
+}
 //create table header
 function tableHead() {
   var theadEl = document.createElement('thead');
   theadEl.className = 'tbl-head-top';
   theadEl.id = 'sales-tbl-head';
   var topRow = tblRow('', hrs, 'Totals');
-  tblEl.appendChild(topRow);
+  theadEl.appendChild(topRow);
   return theadEl;
 }
 
 //create table body
-var tableBody() {
+function tableBody() {
   var tbodyEl = document.createElement('tbody');
-  for(var k = 0; k < stores.length; )
+  for(var j = 0; j < stores.length; j++) {
+    var bodyRow = tblRow(stores[j].name, stores[j].hourlyCookie, stores[j].dayTotal);
+    tbodyEl.appendChild(bodyRow);
+  }
+  return tbodyEl;
 }
 
 //function to create tablerows
@@ -117,6 +125,7 @@ function tblRow (storeInfo, cookieInfo, totalsInfo) {
   return tREl;
 }
 
+tableMaker();
 
 
 
