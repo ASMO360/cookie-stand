@@ -1,5 +1,9 @@
 'use strict';
 
+var reportHeader = document.getElementById('bus-name');
+reportHeader.textContent = 'SALMON COOKIES - REPORTS';
+
+
 var stores = [];
 
 function Store(storeName, minCust, maxCust, avgCookie) {
@@ -47,31 +51,6 @@ console.log('stores',stores);
 var alki = new Store('Alki', 2, 16, 4.6);
 console.log('store name: ', alki);
 console.log('stores',stores);
-
-//Creating array with the store name, hourly cookie totals, and daily totals info for the rows
-//pushing name into 1st cell
-console.log('alki.storeName', alki.storeName);
-var rowAlki = [];
-rowAlki.push(alki.storeName);
-console.log ('row alki array: ',rowAlki);
-
-
-//pushing cookie data into array
-//this is not working!!!!!!
-console.log('alki.hourlyCookie: ', alki.hourlyCookie);
-var alkiCoookieData = function(){
-  for(var k = 0; k > 15; k++) {
-    return rowAlki.push(alki.hourlyCookie[k]);
-  }
-  console.log('rowAlki2ndpass', rowAlki);
-};
-alkiCoookieData();
-
-
-//pushing total to array
-rowAlki.push(alki.dayTotal);
-console.log('rowAlki final array:', rowAlki);
-
 
 //creating table*****************************
 //an array for the hours for top row of table.
@@ -124,51 +103,4 @@ function tblRow (storeInfo, cookieInfo, totalsInfo) {
 
   return tREl;
 }
-
 tableMaker();
-
-
-
-
-
-
-
-
-
-// var trheadEl = document.createElement('tr');
-// console.log('tr head creation: ',trheadEl);
-// trheadEl.className = 'tbl-head-row';
-// trheadEl.id = 'sales-tbl-head-row';
-// theadEl.appendChild(trheadEl);
-//
-// for(var i = 0; i < 16; i++) {
-//   var tdheadEl = document.createElement('td');
-//   console.log('td head creation: ',tdheadEl);
-//   tdheadEl.textContent = hrs[i];
-//   trheadEl.appendChild(tdheadEl);
-// }
-//
-// var tbodyEl = document.createElement('tbody');
-// console.log('tbody', tbodyEl);
-// tbodyEl.className = 'tbl-body';
-// tbodyEl.id = 'sales-tbl-body';
-// tblEl.appendChild(tbodyEl);
-//
-// var tRbodyEl1 = document.createElement('tr');
-// console.log('tRbody row 1', tRbodyEl1);
-// tRbodyEl1.className = 'tbl-body-row1';
-// tRbodyEl1.id = 'sales-tbl-body-row1';
-// tbodyEl.appendChild(tRbodyEl1);
-//
-//
-// //First and Pike table info
-// for(var j = 0; i < 16; i++) {
-//   var tDbody = document.createElement('td');
-//   console.log('tDbody loop', tDbody);
-//   tDbody.textContent = Store.alki.hourlyCookie[j];
-//   tRbodyEl1.appendChild(tDbody);
-// }
-
-//test to create a header via JS
-var reportHeader = document.getElementById('bus-name');
-reportHeader.textContent = 'SALMON COOKIES - REPORTS';
