@@ -99,7 +99,7 @@ function tableHead() {
 function tableBody() {
   var tbodyEl = document.createElement('tbody');
   for(var j = 0; j < stores.length; j++) {
-    var bodyRow = tblRow(stores[j].name, stores[j].hourlyCookie, stores[j].dayTotal);
+    var bodyRow = tblRow(stores[j].storeName, stores[j].hourlyCookie, stores[j].dayTotal);
     tbodyEl.appendChild(bodyRow);
   }
   return tbodyEl;
