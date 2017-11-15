@@ -2,7 +2,8 @@
 
 var stores = [];
 
-function Store(minCust, maxCust, avgCookie) {
+function Store(name, minCust, maxCust, avgCookie) {
+  this.name = name;
   this.minCust = minCust;
   this.maxCust = maxCust;
   this.avgCookie = avgCookie;
@@ -24,9 +25,39 @@ Store.prototype.hourlyCookiePusher = function(){
   }
 };
 
-var firstAndPike = new Store(23, 65, 6.3);
+var firstAndPike = new Store('First and Pike', 23, 65, 6.3);
 console.log('store name: ', firstAndPike);
 console.log('stores',stores);
+
+var seaTac = new Store('SeaTac Airport', 3, 24, 1.2);
+console.log('store name: ', seaTac);
+console.log('stores',stores);
+
+var seaCenter = new Store('Seattle Center', 11, 38, 3.7);
+console.log('store name: ', seaCenter);
+console.log('stores',stores);
+
+var capHill = new Store('Capitol Hill', 20, 38, 2.3);
+console.log('store name: ', capHill);
+console.log('stores',stores);
+
+var alki = new Store('Alki', 2, 16, 4.6);
+console.log('store name: ', alki);
+console.log('stores',stores);
+
+var fillTableEL = document.getElementById('sales-toprow');
+var topcelldataEl = document.createElement('td');
+topcelldataEl.className = 'top-row-cells';
+topcelldataEl.id = 'tbl-head-top';
+fillTableEL.appendChild(fillTableEL);
+
+for(var i = )
+
+
+
+
+
+
 
 
 //
