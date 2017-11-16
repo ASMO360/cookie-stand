@@ -103,12 +103,23 @@ function tblRow (storeInfo, cookieInfo, totalsInfo) {
 
   return tREl;
 }
-tableMaker();
+tableMaker();statt
 
 var formEl = document.getElementById('newStoreCreator');
-function sentSubmit(){
+function sentSubmit(event){
   event.preventDefault();
-  console.log('event listener is working');
+  console.log('event listener is working', event.target.newStore.value);
+  var newStore = event.target.newStore.value;
+  console.log('newStore', newStore);
+  var newMinCust = event.target.minCustomer.value;
+  console.log('newMinCust', newMinCust);
+  var newMaxCust = event.target.maxCustomer.value;
+  console.log('newMaxCust', newMaxCust);
+  var newAvg = event.target.avgCookieSold.value;
+  console.log('newAvg', newAvg);
+  var newStore = new Store(newStore, newMinCust, newMaxCust, newAvg);
+  console.log('store name: ', firstAndPike);
+  console.log('stores',stores);
 }
 formEl.addEventListener('submit', sentSubmit);
 
