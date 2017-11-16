@@ -104,3 +104,19 @@ function tblRow (storeInfo, cookieInfo, totalsInfo) {
   return tREl;
 }
 tableMaker();
+
+var formEl = document.getElementById('newStoreCreator');
+function sentSubmit(){
+  event.preventDefault();
+  console.log('event listener is working');
+}
+formEl.addEventListener('submit', sentSubmit);
+
+
+
+
+
+
+
+
+// for spacing
