@@ -111,43 +111,18 @@ function sentSubmit(event){
   console.log('event listener is working', event.target.newStore.value);
   var newStoreName = event.target.newStore.value;
   console.log('newStore', newStore);
-  var newMinCust = event.target.minCustomer.value;
+  var newMinCust = parseInt(event.target.minCustomer.value);
   console.log('newMinCust', newMinCust);
-  var newMaxCust = event.target.maxCustomer.value;
+  var newMaxCust = parseInt(event.target.maxCustomer.value);
   console.log('newMaxCust', newMaxCust);
-  var newAvg = event.target.avgCookieSold.value;
+  var newAvg = parseInt(event.target.avgCookieSold.value);
   console.log('newAvg', newAvg);
   var newStore = new Store(newStoreName, newMinCust, newMaxCust, newAvg);
   console.log('new store added into the array: ', stores);
-  function tableBody2() {
-    var tbodyEl2 = document.createElement('tbody');
-    for(var e = (stores.length); e < stores.length; e++) {
-      console.log('var. e: ', e);
-      var bodyRow = tblRow2(stores[e].storeName, stores[e].hourlyCookie, stores[e].dayTotal);
-      tbodyEl2.appendChild(bodyRow);
-    }
-    return tbodyEl2;
-  }
-  function tblRow2 (storeInfo, cookieInfo, totalsInfo) {
-    var tREl = document.createElement('tr');
-    var tDElhead = document.createElement('td');
-    tDElhead.textContent = storeInfo;
-    tREl.appendChild(tDElhead);
-
-    for(var i = 0; i < cookieInfo.length; i++){
-      var tDELhead2 = document.createElement('td');
-      tDELhead2.textContent = cookieInfo[i];
-      tREl.appendChild(tDELhead2);
-    }
-
-    var tDElhead3 = document.createElement('td');
-    tDElhead3.textContent = totalsInfo;
-    tREl.appendChild(tDElhead3);
-
-    return tREl;
-  }
-  tableBody2();
-  tblRow2();
-
+  let tblEl = document.getElementById('sales-tbl');
+  tblEl.innerHTML = '';
+  tableMaker();
 }
+
+
 formEl.addEventListener('submit', sentSubmit);
