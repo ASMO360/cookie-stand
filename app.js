@@ -83,7 +83,6 @@ function tableBody() {
   }
   return tbodyEl;
 }
-
 //function to create tablerows
 function tblRow (storeInfo, cookieInfo, totalsInfo) {
   var tREl = document.createElement('tr');
@@ -119,9 +118,7 @@ function sentSubmit(event){
   console.log('newAvg', newAvg);
   var newStore = new Store(newStoreName, newMinCust, newMaxCust, newAvg);
   console.log('new store added into the array: ', stores);
-  //tblRow();
-  //console.log('store name: ', firstAndPike);
-  //console.log('stores',stores);
+
 }
 formEl.addEventListener('submit', sentSubmit);
 
