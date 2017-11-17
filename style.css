@@ -1,32 +1,13 @@
-* {
-  position: static;
-  width: 100%;
-  height: auto;
-  margin: 0;
-  padding: 0;
-  font-family:monospace;
-}
-
-/* BASE STYLES */
-head, script, link {
-  display: none;
-}
-
-html, body {
-  position: relative;
-  height: 100%;
-}
-
-
 body {
   background-color: #fdd251;
 }
 
 table {
+  position:static;
+  width: 50%;
   background-color: #a57b00;
-  float:left;
-  width: 90%;
-  padding: 15px;
+  margin-left: 2%;
+  padding: 1px;
 }
 
 header {
@@ -39,15 +20,19 @@ header {
 }
 
 #newStoreCreator {
-  border-color: black;
+  -color: black;
   border-width: 3px;
-  padding: 15px;
+  padding: 10px;
+  margin-right: 10%;
   float:right;
   width: 30%;
 }
 
 input#submit {
   background-color: color #f2bd1f;
+}
 
+footer {
+  position:absolute;
 
 }
