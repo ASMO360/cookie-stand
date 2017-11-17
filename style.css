@@ -1,12 +1,53 @@
+* {
+  position: static;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  font-family:monospace;
+}
+
+/* BASE STYLES */
+head, script, link {
+  display: none;
+}
+
+html, body {
+  position: relative;
+  height: 100%;
+}
+
+
 body {
-  background-color: grey;
+  background-color: #fdd251;
 }
 
 table {
-  background-color: blue;
+  background-color: #a57b00;
+  float:left;
+  width: 90%;
+  padding: 15px;
 }
 
 header {
-  background-color: blue;
+  background-color: #350870;
   text-align: center;
+  font-size: 2em;
+  width: auto;
+  font-family:monospace;
+  color: white;
+}
+
+#newStoreCreator {
+  border-color: black;
+  border-width: 3px;
+  padding: 15px;
+  float:right;
+  width: 30%;
+}
+
+input#submit {
+  background-color: color #f2bd1f;
+
+
 }
