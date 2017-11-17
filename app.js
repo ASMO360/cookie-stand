@@ -54,16 +54,336 @@ console.log('stores',stores);
 
 //creating table*****************************
 //an array for the hours for top row of table.
-var hrs = ['6 AM', '7 AM', '8 AM', '9 AM', '10 AM', '11 AM', '12 PM', '1 PM', '2 PM', '3 PM', '4 PM', '5 PM', '6 PM', '7 PM'];
+var hrs = ['6AM', '7AM', '8AM', '9AM', '10AM', '11AM', '12PM', '1PM', '2PM', '3PM', '4PM', '5PM', '6PM', '7PM'];
+//totals row stuff
+var columnTotals = [];
+var footTotals = 0;
+var footData = [];
+
+//totals for column
+function grabColumnData (z) {
+  for(var m = 0; m < stores.length; m++) { //pushes hourly cookie data into array
+    var n = stores[m].hourlyCookie[z];
+    columnTotals.push(parseInt(n));
+    console.log('grabColumnDataA output:',n);
+  }
+  console.log('columnTotals', columnTotals); //sums the array of hourly cookie data
+  function columnTotalsF(){
+    for(var t = 0; t < columnTotals.length; t++) {
+      footTotals += columnTotals[t];
+    }
+    console.log('footTotals: ', footTotals);
+    footData.push(footTotals);
+  }
+  console.log('footData array: ', footData);
+  columnTotalsF();
+  console.log('pop columnTotals', columnTotals);
+  footTotals = 0;
+  console.log('zeroing footTotals', footTotals);
+}
+grabColumnData(0);
+
+//totals for column
+var columnTotals1 = [];
+function grabColumnData1 (z) {
+  for(var m = 0; m < stores.length; m++) {
+    var n = stores[m].hourlyCookie[z];
+    columnTotals1.push(parseInt(n));
+    console.log('grabColumnData output:',n);
+  }
+  console.log('columnTotals1', columnTotals);
+  function columnTotalsF(){
+    for(var t = 0; t < columnTotals1.length; t++) {
+      footTotals += columnTotals1[t];
+    }
+    console.log('footTotals: ', footTotals);
+    footData.push(footTotals);
+  }
+  console.log('footData array: ', footData);
+  columnTotalsF();
+  footTotals = 0;
+  console.log('zeroing footTotals', footTotals);
+}
+grabColumnData1(1);
+
+//totals for column
+var columnTotals2 = [];
+function grabColumnData2 (z) {
+  for(var m = 0; m < stores.length; m++) {
+    var n = stores[m].hourlyCookie[z];
+    columnTotals2.push(parseInt(n));
+    console.log('grabColumnData output:',n);
+  }
+  function columnTotalsF(){
+    for(var t = 0; t < columnTotals2.length; t++) {
+      footTotals += columnTotals2[t];
+    }
+    console.log('footTotals: ', footTotals);
+    footData.push(footTotals);
+  }
+  console.log('footData array: ', footData);
+  columnTotalsF();
+  footTotals = 0;
+  console.log('zeroing footTotals', footTotals);
+}
+grabColumnData2(2);
+
+//totals for column
+var columnTotals3 = [];
+function grabColumnData3 (z) {
+  for(var m = 0; m < stores.length; m++) {
+    var n = stores[m].hourlyCookie[z];
+    columnTotals3.push(parseInt(n));
+    console.log('grabColumnData output:',n);
+  }
+  function columnTotalsF(){
+    for(var t = 0; t < columnTotals3.length; t++) {
+      footTotals += columnTotals3[t];
+    }
+    console.log('footTotals: ', footTotals);
+    footData.push(footTotals);
+  }
+  console.log('footData array: ', footData);
+  columnTotalsF();
+  footTotals = 0;
+  console.log('zeroing footTotals', footTotals);
+}
+grabColumnData3(3);
+
+//totals for column
+var columnTotals4 = [];
+function grabColumnData4 (z) {
+  for(var m = 0; m < stores.length; m++) {
+    var n = stores[m].hourlyCookie[z];
+    columnTotals4.push(parseInt(n));
+    console.log('grabColumnData output:',n);
+  }
+  function columnTotalsF(){
+    for(var t = 0; t < columnTotals4.length; t++) {
+      footTotals += columnTotals4[t];
+    }
+    console.log('footTotals: ', footTotals);
+    footData.push(footTotals);
+  }
+  console.log('footData array: ', footData);
+  columnTotalsF();
+  footTotals = 0;
+  console.log('zeroing footTotals', footTotals);
+}
+grabColumnData4(4);
+
+//totals for column
+var columnTotals5 = [];
+function grabColumnData5 (z) {
+  for(var m = 0; m < stores.length; m++) {
+    var n = stores[m].hourlyCookie[z];
+    columnTotals5.push(parseInt(n));
+    console.log('grabColumnData output:',n);
+  }
+  function columnTotalsF(){
+    for(var t = 0; t < columnTotals5.length; t++) {
+      footTotals += columnTotals5[t];
+    }
+    console.log('footTotals: ', footTotals);
+    footData.push(footTotals);
+  }
+  console.log('footData array: ', footData);
+  columnTotalsF();
+  footTotals = 0;
+  console.log('zeroing footTotals', footTotals);
+}
+grabColumnData5(5);
+
+//totals for column
+var columnTotals6 = [];
+function grabColumnData6 (z) {
+  for(var m = 0; m < stores.length; m++) {
+    var n = stores[m].hourlyCookie[z];
+    columnTotals6.push(parseInt(n));
+    console.log('grabColumnData output:',n);
+  }
+  function columnTotalsF(){
+    for(var t = 0; t < columnTotals6.length; t++) {
+      footTotals += columnTotals6[t];
+    }
+    console.log('footTotals: ', footTotals);
+    footData.push(footTotals);
+  }
+  console.log('footData array: ', footData);
+  columnTotalsF();
+  footTotals = 0;
+  console.log('zeroing footTotals', footTotals);
+}
+grabColumnData6(6);
+
+//totals for column
+var columnTotals7 = [];
+function grabColumnData7 (z) {
+  for(var m = 0; m < stores.length; m++) {
+    var n = stores[m].hourlyCookie[z];
+    columnTotals7.push(parseInt(n));
+    console.log('grabColumnData output:',n);
+  }
+  function columnTotalsF(){
+    for(var t = 0; t < columnTotals7.length; t++) {
+      footTotals += columnTotals7[t];
+    }
+    console.log('footTotals: ', footTotals);
+    footData.push(footTotals);
+  }
+  console.log('footData array: ', footData);
+  columnTotalsF();
+  footTotals = 0;
+  console.log('zeroing footTotals', footTotals);
+}
+grabColumnData7(7);
+
+//totals for column
+var columnTotals8 = [];
+function grabColumnData8 (z) {
+  for(var m = 0; m < stores.length; m++) {
+    var n = stores[m].hourlyCookie[z];
+    columnTotals8.push(parseInt(n));
+    console.log('grabColumnData output:',n);
+  }
+  function columnTotalsF(){
+    for(var t = 0; t < columnTotals8.length; t++) {
+      footTotals += columnTotals8[t];
+    }
+    console.log('footTotals: ', footTotals);
+    footData.push(footTotals);
+  }
+  console.log('footData array: ', footData);
+  columnTotalsF();
+  footTotals = 0;
+  console.log('zeroing footTotals', footTotals);
+}
+grabColumnData8(8);
+
+//totals for column
+var columnTotals9 = [];
+function grabColumnData9 (z) {
+  for(var m = 0; m < stores.length; m++) {
+    var n = stores[m].hourlyCookie[z];
+    columnTotals9.push(parseInt(n));
+    console.log('grabColumnData output:',n);
+  }
+  function columnTotalsF(){
+    for(var t = 0; t < columnTotals9.length; t++) {
+      footTotals += columnTotals9[t];
+    }
+    console.log('footTotals: ', footTotals);
+    footData.push(footTotals);
+  }
+  console.log('footData array: ', footData);
+  columnTotalsF();
+  footTotals = 0;
+  console.log('zeroing footTotals', footTotals);
+}
+grabColumnData9(9);
+
+//totals for column
+var columnTotals10 = [];
+function grabColumnData10 (z) {
+  for(var m = 0; m < stores.length; m++) {
+    var n = stores[m].hourlyCookie[z];
+    columnTotals10.push(parseInt(n));
+    console.log('grabColumnData output:',n);
+  }
+  function columnTotalsF(){
+    for(var t = 0; t < columnTotals3.length; t++) {
+      footTotals += columnTotals10[t];
+    }
+    console.log('footTotals: ', footTotals);
+    footData.push(footTotals);
+  }
+  console.log('footData array: ', footData);
+  columnTotalsF();
+  footTotals = 0;
+  console.log('zeroing footTotals', footTotals);
+}
+grabColumnData10(10);
+
+//totals for column
+var columnTotals11 = [];
+function grabColumnData11 (z) {
+  for(var m = 0; m < stores.length; m++) {
+    var n = stores[m].hourlyCookie[z];
+    columnTotals11.push(parseInt(n));
+    console.log('grabColumnData output:',n);
+  }
+  function columnTotalsF(){
+    for(var t = 0; t < columnTotals11.length; t++) {
+      footTotals += columnTotals11[t];
+    }
+    console.log('footTotals: ', footTotals);
+    footData.push(footTotals);
+  }
+  console.log('footData array: ', footData);
+  columnTotalsF();
+  footTotals = 0;
+  console.log('zeroing footTotals', footTotals);
+}
+grabColumnData11(11);
+
+//totals for column
+var columnTotals12 = [];
+function grabColumnData12 (z) {
+  for(var m = 0; m < stores.length; m++) {
+    var n = stores[m].hourlyCookie[z];
+    columnTotals12.push(parseInt(n));
+    console.log('grabColumnData output:',n);
+  }
+  function columnTotalsF(){
+    for(var t = 0; t < columnTotals12.length; t++) {
+      footTotals += columnTotals12[t];
+    }
+    console.log('footTotals: ', footTotals);
+    footData.push(footTotals);
+  }
+  console.log('footData array: ', footData);
+  columnTotalsF();
+  footTotals = 0;
+  console.log('zeroing footTotals', footTotals);
+}
+grabColumnData12(12);
+
+//totals for column
+var columnTotals13 = [];
+function grabColumnData13 (z) {
+  for(var m = 0; m < stores.length; m++) {
+    var n = stores[m].hourlyCookie[z];
+    columnTotals13.push(parseInt(n));
+    console.log('grabColumnData output:',n);
+  }
+  function columnTotalsF(){
+    for(var t = 0; t < columnTotals13.length; t++) {
+      footTotals += columnTotals13[t];
+    }
+    console.log('footTotals: ', footTotals);
+    footData.push(footTotals);
+  }
+  console.log('footData array: ', footData);
+  columnTotalsF();
+  footTotals = 0;
+  console.log('zeroing footTotals', footTotals);
+}
+grabColumnData13(13);
+
+//Next time I would figureout a Constructor to do the totals. #makeItWork
+
 //ADDING TABLE
 
 function tableMaker() {
   var tblEl = document.getElementById('sales-tbl');
   var header = tableHead();
   var body = tableBody();
+  var footer = tableFooter();
   tblEl.appendChild(header);
   tblEl.appendChild(body);
+  tblEl.appendChild(footer);
 }
+
 //create table header
 function tableHead() {
   var theadEl = document.createElement('thead');
@@ -103,6 +423,17 @@ function tblRow (storeInfo, cookieInfo, totalsInfo) {
 
   return tREl;
 }
+
+//totals bottom row
+function tableFooter (){
+  var tfootEl = document.createElement('tfoot');
+  tfootEl.className = 'tbl-foot-bottom';
+  tfootEl.id = 'sales-tbl-foot';
+  var bottomRow = tblRow('Totals', footData, '');
+  tfootEl.appendChild(bottomRow);
+  return tfootEl;
+}
+
 tableMaker();
 
 var formEl = document.getElementById('newStoreCreator');
@@ -123,6 +454,5 @@ function sentSubmit(event){
   tblEl.innerHTML = '';
   tableMaker();
 }
-
 
 formEl.addEventListener('submit', sentSubmit);

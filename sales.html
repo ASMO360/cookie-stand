@@ -4,7 +4,7 @@
     <title>
       Salmon Cookies Sales Information
     </title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleHome.css">
   </head>
   <body>
     <header id = "bus-name">
@@ -19,19 +19,23 @@
             <input name= "newStore" type= "text" placeholder= "Store Name" maxlength= "20">
           </label>
           <label>Minimum Daily Customers:
-            <input name= "minCustomer" type= "number">
+
+            <input name= "minCustomer" type= "number" placeholder= "Min Customer">
           </label>
           <label>Maximum Daily Customers:
-            <input name= "maxCustomer" type= "number">
+            <input name= "maxCustomer" type= "number" placeholder= "Max Customer">
           </label>
           <label>Daily Average Cookies sold:
-            <input name= "avgCookieSold" type= "number" step= "0.1">
+            <input name= "avgCookieSold" type= "number" step= "0.1" placeholder= "Daily Avg. Cookies">
           </label>
           <button name= "submit" type= "submit">Create Store</button>
         </form>
       </section>
+      <div id = "fishies"></div>
     </main>
     <footer>
+      <p>"Pat's Original Seattle Salmon Cookies"
+      </p>
     </footer>
     <script src = "app.js"></script>
   </body>

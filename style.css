@@ -1,12 +1,38 @@
 body {
-  background-color: grey;
+  background-color: #fdd251;
 }
 
 table {
-  background-color: blue;
+  position:static;
+  width: 50%;
+  background-color: #a57b00;
+  margin-left: 2%;
+  padding: 1px;
 }
 
 header {
-  background-color: blue;
+  background-color: #350870;
   text-align: center;
+  font-size: 2em;
+  width: auto;
+  font-family:monospace;
+  color: white;
+}
+
+#newStoreCreator {
+  -color: black;
+  border-width: 3px;
+  padding: 10px;
+  margin-right: 10%;
+  float:right;
+  width: 30%;
+}
+
+input#submit {
+  background-color: color #f2bd1f;
+}
+
+footer {
+  position:absolute;
+
 }
