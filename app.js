@@ -373,6 +373,7 @@ grabColumnData13(13);
 //Next time I would figureout a Constructor to do the totals. #makeItWork
 
 //ADDING TABLE
+
 function tableMaker() {
   var tblEl = document.getElementById('sales-tbl');
   var header = tableHead();
@@ -382,6 +383,7 @@ function tableMaker() {
   tblEl.appendChild(body);
   tblEl.appendChild(footer);
 }
+
 //create table header
 function tableHead() {
   var theadEl = document.createElement('thead');
