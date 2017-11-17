@@ -55,21 +55,40 @@ console.log('stores',stores);
 //creating table*****************************
 //an array for the hours for top row of table.
 var hrs = ['6AM', '7AM', '8AM', '9AM', '10AM', '11AM', '12PM', '1PM', '2PM', '3PM', '4PM', '5PM', '6PM', '7PM'];
-
+//totals row stuff
 var columnTotals = [];
+var footTotals = 0;
+var footerData = [];
 
-
-function grabColumnDataA () {
+function grabColumnDataA (colT) {
   for(var m = 0; m < stores.length; m++) {
-    var n = stores[m].hourlyCookie[0];
-    columnTotals.push(n);
+    var n = stores[m].hourlyCookie[colT];
+    columnTotals.push(parseInt(n));
     console.log('grabColumnDataA output:',n);
   }
-  console.log('columnTotals', columnTotals);
 }
-grabColumnDataA();
-//ADDING TABLE
 
+
+
+
+
+
+
+
+
+function columnTotalsF(){
+  for(var t = 0; t < columnTotals.length; t++) {
+    footTotals += columnTotals[t];
+    console.log('colomntotals in func: ',columnTotals[t]);
+    console.log('footTotals: ', footTotals);
+  }
+  footerData.push(footTotals);
+  console.log(footerData);
+}
+
+console.log('columnTotals', columnTotals);
+
+//ADDING TABLE
 function tableMaker() {
   var tblEl = document.getElementById('sales-tbl');
   var header = tableHead();
