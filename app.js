@@ -54,7 +54,20 @@ console.log('stores',stores);
 
 //creating table*****************************
 //an array for the hours for top row of table.
-var hrs = ['6 AM', '7 AM', '8 AM', '9 AM', '10 AM', '11 AM', '12 PM', '1 PM', '2 PM', '3 PM', '4 PM', '5 PM', '6 PM', '7 PM'];
+var hrs = ['6AM', '7AM', '8AM', '9AM', '10AM', '11AM', '12PM', '1PM', '2PM', '3PM', '4PM', '5PM', '6PM', '7PM'];
+
+var columnTotals = [];
+
+
+function grabColumnDataA () {
+  for(var m = 0; m < stores.length; m++) {
+    var n = stores[m].hourlyCookie[0];
+    columnTotals.push(n);
+    console.log('grabColumnDataA output:',n);
+  }
+  console.log('columnTotals', columnTotals);
+}
+grabColumnDataA();
 //ADDING TABLE
 
 function tableMaker() {
@@ -103,6 +116,17 @@ function tblRow (storeInfo, cookieInfo, totalsInfo) {
 
   return tREl;
 }
+
+//totals bottom row
+function tableFooter (){
+  var tfootEl = document.createElement('tfoot');
+  tfootEl.className = 'tbl-foot-bottom';
+  tfootEl.id = 'sales-tbl-foot';
+  var bottomRow = tblRow('', columnTotals, '');
+  tfootEl.appendChild(bottomRow);
+  return tfootEl;
+}
+
 tableMaker();
 
 var formEl = document.getElementById('newStoreCreator');
