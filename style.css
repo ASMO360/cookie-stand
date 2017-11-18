@@ -24,6 +24,8 @@ header {
   width: auto;
   font-family: 'Courgette', cursive;
   color: white;
+  border-bottom-style:groove;
+  border-bottom-width:thick;
 }
 
 h1 {
