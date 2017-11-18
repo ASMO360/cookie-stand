@@ -12,7 +12,9 @@ header {
   border-bottom-style:groove;
   border-bottom-width:thick;
 }
-
+hr {
+  color:006262;
+}
 #login {
   margin-left:90%;
 }
