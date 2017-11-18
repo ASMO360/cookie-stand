@@ -1,6 +1,6 @@
 body {
   background-color: white;
-  font-family: Lato,Helvetica,Arial,sans-serif;
+  font-family: 'Courgette', cursive;
 }
 
 #sales-tbl {
@@ -24,6 +24,10 @@ header {
   width: auto;
   font-family: 'Courgette', cursive;
   color: white;
+}
+
+h1 {
+  font-size: .75em;
 }
 
 #newStoreCreator {

@@ -9,10 +9,21 @@ header {
   width: auto;
   font-family: 'Courgette', cursive;
   color: white;
+  border-bottom-style:groove;
+  border-bottom-width:thick;
 }
+
+#login {
+  margin-left:90%;
+}
+
 #salmon-pic {
   max-width: 30%;
   margin-left: 35%;
+}
+
+h1 {
+  font-size: .75em;
 }
 
 p {
