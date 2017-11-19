@@ -1,5 +1,5 @@
 body {
-  background-color: #fdd251;
+  background-color: rgba(253, 210, 81, 0.25);
 }
 
 header {
@@ -21,8 +21,15 @@ header {
   margin-left: 35%;
 }
 #factory {
-  margin-left:5%;
+  max-width: 80%;
+  margin-left:30%;
 }
+
+#locations {
+  float: right;
+  margin-right: 30%;
+}
+
 
 .shirt {
   max width 20%;
@@ -30,6 +37,7 @@ header {
 }
 #shirt-pic{
   width: 15%;
+  margin: 10px;
 }
 
 h1 {
