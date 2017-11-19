@@ -1,38 +1,58 @@
 body {
-  background-color: #fdd251;
+  background-color: white;
+  font-family: sans-serif;
 }
 
-table {
+#sales-tbl {
   position:static;
   width: 50%;
-  background-color: #a57b00;
+  background-color: #ffbc37;
   margin-left: 2%;
   padding: 1px;
 }
 
+table, thead, tbody, tfoot, tr, td {
+  border: 1px solid black;
+  text-align: center;
+  padding: 3px;
+}
+
 header {
-  background-color: #350870;
+  background-color: #00a4a4;
   text-align: center;
   font-size: 2em;
   width: auto;
-  font-family:monospace;
+  font-family: 'Courgette', cursive;
   color: white;
+  border-bottom-style:groove;
+  border-bottom-width:thick;
+}
+
+h1 {
+  font-size: .75em;
 }
 
 #newStoreCreator {
   -color: black;
   border-width: 3px;
   padding: 10px;
-  margin-right: 10%;
+  margin-right: 50%;
   float:right;
   width: 30%;
+  max-width: 191px;
 }
 
-input#submit {
+#fishies {
+  padding: 10px;
+  margin-left: 5%;
+}
+
+#submit {
   background-color: color #f2bd1f;
 }
 
+#family-button {
+  background-image: url("https://raw.githubusercontent.com/codefellows/seattle-201d28/master/class-06-dom-objects-domain_modeling/lab/assets/family.jpg");
+}
 footer {
-  position:absolute;
-
 }

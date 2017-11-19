@@ -1,13 +1,15 @@
 <!DOCTYPE>
 <html>
   <head>
+    <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <title>
       Salmon Cookies Sales Information
     </title>
-    <link rel="stylesheet" href="styleHome.css">
   </head>
   <body>
     <header id = "bus-name">
+    <h1>Pat's World Famous Seattle Salmon Cookies</h1>
     </header>
     <main>
       <h2>Salmon Cookie Sales</h2>
@@ -18,20 +20,21 @@
           <label> New Store Name:
             <input name= "newStore" type= "text" placeholder= "Store Name" maxlength= "20">
           </label>
-          <label>Minimum Daily Customers:
+          <label>Min Customers:
 
             <input name= "minCustomer" type= "number" placeholder= "Min Customer">
-          </label>
-          <label>Maximum Daily Customers:
+          </label><b></b>
+          <label>Max Customers:
             <input name= "maxCustomer" type= "number" placeholder= "Max Customer">
           </label>
           <label>Daily Average Cookies sold:
             <input name= "avgCookieSold" type= "number" step= "0.1" placeholder= "Daily Avg. Cookies">
           </label>
-          <button name= "submit" type= "submit">Create Store</button>
+          <button id="family-button" name= "submit" type= "submit">Create Store</button>
         </form>
       </section>
-      <div id = "fishies"></div>
+      <div id = "fishies"><img src="https://raw.githubusercontent.com/codefellows/seattle-201d28/master/class-06-dom-objects-domain_modeling/lab/assets/fishies.jpg" alt="3 Cartoon Salmon for Clark" width="100">
+      </div>
     </main>
     <footer>
       <p>"Pat's Original Seattle Salmon Cookies"
